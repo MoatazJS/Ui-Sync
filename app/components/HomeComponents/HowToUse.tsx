@@ -29,7 +29,7 @@ export default function HowToUse() {
   ];
   return (
     <>
-      <main className="min-h-screen flex flex-col justify-center items-center gap-4 md:gap-6 lg:gap-6 xl:gap-6 bg-zinc-50 font-sans dark:bg-black">
+      <main className="min-h-screen flex flex-col justify-center items-center gap-4 pb-10 md:py-20 md:gap-6 lg:gap-6 xl:gap-6 bg-zinc-50 font-sans dark:bg-black">
         <div className="flex flex-col gap-4">
           <h2 className="text-center text-5xl font-semibold">How to Use</h2>
           <p className="text-center text-2xl font-medium text-gray-300">
