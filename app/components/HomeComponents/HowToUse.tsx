@@ -10,19 +10,19 @@ export default function HowToUse() {
   const CardsInfo = [
     {
       icon: faLayerGroup,
-      step: "Step1",
+      step: "Step 1",
       title: "Choose Your Setup",
       text: "Pick your code format—JSX, Tailwind, Bootstrap, or plain HTML & CSS",
     },
     {
       icon: faCode,
-      step: "Step2",
+      step: "Step 2",
       title: "Start Writing Your UI",
       text: "Type or paste your code in the editor",
     },
     {
       icon: faDesktop,
-      step: "Step3",
+      step: "Step 3",
       title: "Preview Your Design",
       text: "See your UI update live across four breakpoints.",
     },
@@ -50,7 +50,7 @@ export default function HowToUse() {
                 />
               </div>
 
-              <div className="text-center items-center  flex flex-col justify-center gap-2 h-28">
+              <div className="text-center items-center  flex flex-col justify-center gap-2 h-14">
                 <h3 className="text-2xl text-indigo-600 font-bold">
                   {card.step}
                 </h3>
