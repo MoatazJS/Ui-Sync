@@ -4,7 +4,7 @@ import HowToUse from "./components/HomeComponents/HowToUse";
 export default function Home() {
   return (
     <>
-      <HeroSection />;
+      <HeroSection />
       <HowToUse />
     </>
   );
