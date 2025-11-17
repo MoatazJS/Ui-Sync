@@ -3,7 +3,7 @@ import Header from "./components/HomeComponents/Header";
 export default function Home() {
   return (
     <main className="relative flex flex-col min-h-screen items-center justify-center gap-4 md:gap-6 lg:gap-6 xl:gap-6 bg-zinc-50 font-sans dark:bg-black">
-      <div className="absolute  inset-0 opacity-30 bg-[radial-gradient(circle,#6366f1,#8b5cf6,transparent)]" />
+      <div className="absolute inset-0 opacity-30 bg-[radial-gradient(circle,#6366f1,#8b5cf6,transparent)]" />
       <div className="z-10">
         <Header />
       </div>
@@ -16,9 +16,12 @@ export default function Home() {
           Instantly preview your design in four breakpoints all side by side.
         </p>
       </div>
-      <div className="z-10">
-        <button className="py-4 px-7  bg-indigo-800 rounded-2xl cursor-pointer hover:bg-indigo-500 font-semibold text-gray-50 hover:text-gray-200">
+      <div className="z-10 flex gap-2">
+        <button className="py-4 px-7 w-40 bg-indigo-800 rounded-2xl cursor-pointer hover:bg-indigo-500 font-semibold text-gray-50 hover:text-gray-200">
           Get Started
+        </button>
+        <button className="py-4 px-7 w-40 bg-transparent border-2 border-indigo-500  rounded-2xl cursor-pointer hover:bg-indigo-500 font-semibold text-gray-50 hover:text-gray-200">
+          Demo
         </button>
       </div>
     </main>
