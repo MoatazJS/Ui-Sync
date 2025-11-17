@@ -23,7 +23,7 @@ export default function Header() {
         <Dots travel={titleWidth} />
       </div>
       <div ref={titleRef}>
-        <h1 className="text-5xl sm:text-5xl md:text-5xl lg:text-6xl xl:text-7xl text-transparent bg-clip-text bg-linear-to-r from-indigo-500 via-indigo-600 to-indigo-500 dark:from-indigo-200 dark:via-indigo-300 dark:to-indigo-200">
+        <h1 className="text-5xl sm:text-5xl md:text-5xl lg:text-6xl xl:text-7xl text-black dark:text-white  [text-shadow:0_0_12px_rgba(139,92,246,0.8),0_0_24px_rgba(139,92,246,0.6)]">
           UI-Sync
         </h1>
       </div>
