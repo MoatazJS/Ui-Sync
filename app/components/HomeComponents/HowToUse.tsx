@@ -1,12 +1,15 @@
 "use client";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import React from "react";
+import React, { useLayoutEffect, useRef, useState } from "react";
 import {
   faCode,
   faLayerGroup,
   faDesktop,
 } from "@fortawesome/free-solid-svg-icons";
+import SpotlightCard from "@/components/SpotlightCard";
 import { easeInOut, motion } from "motion/react";
+import Dots from "../Dots";
+
 export default function HowToUse() {
   const CardsInfo = [
     {
@@ -28,6 +31,20 @@ export default function HowToUse() {
       text: "See your UI update live across four breakpoints.",
     },
   ];
+  const [titleWidth, setTitleWidth] = useState(0);
+  const TitleRef = useRef<HTMLDivElement>(null);
+  useLayoutEffect(() => {
+    if (TitleRef.current) {
+      setTitleWidth(TitleRef.current.offsetWidth);
+    }
+    const HandleResize = () => {
+      if (TitleRef.current) {
+        setTitleWidth(TitleRef.current.offsetWidth);
+      }
+    };
+    window.addEventListener("resize", HandleResize);
+    return () => window.removeEventListener("resize", HandleResize);
+  }, []);
   return (
     <>
       <main className="min-h-screen flex flex-col justify-center items-center gap-4 pb-10 md:py-20 md:gap-6 lg:gap-6 xl:gap-6 bg-zinc-50 font-sans dark:bg-black">
@@ -37,11 +54,16 @@ export default function HowToUse() {
           transition={{ duration: 0.8, ease: easeInOut }}
           className="flex flex-col gap-4"
         >
-          <h2 className="text-center text-5xl font-semibold">How to Use</h2>
-          <p className="text-center text-2xl font-medium text-gray-300">
-            Get started in three simple steps.
-          </p>
+          <div>
+            <Dots travel={titleWidth} />
+          </div>
+          <h2 ref={TitleRef} className="text-center text-5xl font-semibold">
+            How to Use
+          </h2>
         </motion.div>
+        <p className="text-center text-2xl font-medium text-gray-300">
+          Get started in three simple steps.
+        </p>
         <div className="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-1 lg:grid-cols-3 xl:grid-cols-3 justify-center align-center gap-4 ">
           {CardsInfo.map((card) => (
             <div
