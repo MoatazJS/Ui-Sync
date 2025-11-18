@@ -66,9 +66,10 @@ export default function HowToUse() {
         </p>
         <div className="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-1 lg:grid-cols-3 xl:grid-cols-3 justify-center align-center gap-4 ">
           {CardsInfo.map((card) => (
-            <div
+            <SpotlightCard
               key={card.step}
-              className="w-80 h-96 flex flex-col justify-center rounded-2xl items-center gap-4 md:gap-6 lg:gap-6 xl:gap-6 bg-slate-800 p-5"
+              spotlightColor="rgba(0, 229, 255, 0.2)"
+              className="custom-spotlight-card w-80 h-96 flex flex-col justify-center rounded-2xl items-center gap-4 md:gap-6 lg:gap-6 xl:gap-6 bg-slate-400 dark:bg-slate-800 p-5"
             >
               <motion.div
                 initial={{ opacity: 0 }}
@@ -101,7 +102,7 @@ export default function HowToUse() {
               >
                 {card.text}
               </motion.p>
-            </div>
+            </SpotlightCard>
           ))}
         </div>
       </main>
