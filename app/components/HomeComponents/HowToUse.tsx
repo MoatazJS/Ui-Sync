@@ -57,11 +57,14 @@ export default function HowToUse() {
           <div>
             <Dots travel={titleWidth} />
           </div>
-          <h2 ref={TitleRef} className="text-center text-5xl font-semibold">
+          <h2
+            ref={TitleRef}
+            className="text-center text-5xl font-semibold dark:text-white text-indigo-600"
+          >
             How to Use
           </h2>
         </motion.div>
-        <p className="text-center text-2xl font-medium text-gray-300">
+        <p className="text-center text-2xl font-medium dark:text-gray-300 text-indigo-400">
           Get started in three simple steps.
         </p>
         <div className="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-1 lg:grid-cols-3 xl:grid-cols-3 justify-center align-center gap-4 ">
@@ -92,13 +95,15 @@ export default function HowToUse() {
                 <h3 className="text-2xl text-indigo-600 font-bold">
                   {card.step}
                 </h3>
-                <p className="text-2xl font-medium text-white">{card.title}</p>
+                <p className="text-2xl font-medium dark:text-white text-gray-500">
+                  {card.title}
+                </p>
               </motion.div>
               <motion.p
                 initial={{ opacity: 0, y: 10 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, ease: easeInOut }}
-                className="text-center m-auto text-gray-400"
+                className="text-center m-auto dark:text-gray-400 text-gray-600"
               >
                 {card.text}
               </motion.p>
