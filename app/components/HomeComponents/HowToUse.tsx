@@ -6,6 +6,7 @@ import {
   faLayerGroup,
   faDesktop,
 } from "@fortawesome/free-solid-svg-icons";
+import { easeInOut, motion } from "motion/react";
 export default function HowToUse() {
   const CardsInfo = [
     {
@@ -30,33 +31,54 @@ export default function HowToUse() {
   return (
     <>
       <main className="min-h-screen flex flex-col justify-center items-center gap-4 pb-10 md:py-20 md:gap-6 lg:gap-6 xl:gap-6 bg-zinc-50 font-sans dark:bg-black">
-        <div className="flex flex-col gap-4">
+        <motion.div
+          initial={{ opacity: 0, y: -10 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, ease: easeInOut }}
+          className="flex flex-col gap-4"
+        >
           <h2 className="text-center text-5xl font-semibold">How to Use</h2>
           <p className="text-center text-2xl font-medium text-gray-300">
             Get started in three simple steps.
           </p>
-        </div>
+        </motion.div>
         <div className="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-1 lg:grid-cols-3 xl:grid-cols-3 justify-center align-center gap-4 ">
           {CardsInfo.map((card) => (
             <div
               key={card.step}
               className="w-80 h-96 flex flex-col justify-center rounded-2xl items-center gap-4 md:gap-6 lg:gap-6 xl:gap-6 bg-slate-800 p-5"
             >
-              <div>
+              <motion.div
+                initial={{ opacity: 0 }}
+                whileInView={{ opacity: 1 }}
+                transition={{ duration: 0.8, ease: easeInOut }}
+              >
                 <FontAwesomeIcon
                   icon={card.icon}
                   size="2x"
                   className="text-indigo-600 mt-5"
                 />
-              </div>
+              </motion.div>
 
-              <div className="text-center items-center  flex flex-col justify-center gap-2 h-14">
+              <motion.div
+                initial={{ opacity: 0, y: -10 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, ease: easeInOut }}
+                className="text-center items-center  flex flex-col justify-center gap-2 h-14"
+              >
                 <h3 className="text-2xl text-indigo-600 font-bold">
                   {card.step}
                 </h3>
                 <p className="text-2xl font-medium text-white">{card.title}</p>
-              </div>
-              <p className="text-center m-auto text-gray-400">{card.text}</p>
+              </motion.div>
+              <motion.p
+                initial={{ opacity: 0, y: 10 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, ease: easeInOut }}
+                className="text-center m-auto text-gray-400"
+              >
+                {card.text}
+              </motion.p>
             </div>
           ))}
         </div>

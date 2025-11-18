@@ -1,8 +1,15 @@
+"use client";
+import { easeIn, motion } from "motion/react";
 import Header from "./Header";
 
 export default function HeroSection() {
   return (
-    <main className="relative flex flex-col min-h-screen items-center justify-center gap-4 md:gap-6 lg:gap-6 xl:gap-6 bg-zinc-50 font-sans dark:bg-black">
+    <motion.main
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{ duration: 0.8, ease: easeIn }}
+      className="relative flex flex-col min-h-screen items-center justify-center gap-4 md:gap-6 lg:gap-6 xl:gap-6 bg-zinc-50 font-sans dark:bg-black"
+    >
       <div className="absolute inset-0 opacity-30 bg-[radial-gradient(circle,#6366f1,#8b5cf6,transparent)]" />
       <div className="z-10">
         <Header />
@@ -24,6 +31,6 @@ export default function HeroSection() {
           Demo
         </button>
       </div>
-    </main>
+    </motion.main>
   );
 }
