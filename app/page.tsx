@@ -1,3 +1,4 @@
+import Demo from "./components/HomeComponents/Demo";
 import HeroSection from "./components/HomeComponents/HeroSection";
 import HowToUse from "./components/HomeComponents/HowToUse";
 
@@ -6,6 +7,7 @@ export default function Home() {
     <>
       <HeroSection />
       <HowToUse />
+      <Demo />
     </>
   );
 }

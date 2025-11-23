@@ -47,7 +47,7 @@ export default function HowToUse() {
   }, []);
   return (
     <>
-      <main className="min-h-screen flex flex-col justify-center items-center gap-4 pb-10 md:py-20 md:gap-6 lg:gap-6 xl:gap-6 bg-zinc-50 font-sans dark:bg-black">
+      <main className="min-h-screen flex flex-col justify-center items-center pt-4 md:pt-0 lg:pt-0 gap-4 pb-10 md:py-20 md:gap-6 lg:gap-6 xl:gap-6 bg-zinc-200 font-sans dark:bg-black">
         <motion.div
           initial={{ opacity: 0, y: -10 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -71,8 +71,8 @@ export default function HowToUse() {
           {CardsInfo.map((card) => (
             <SpotlightCard
               key={card.step}
-              spotlightColor="rgba(0, 229, 255, 0.2)"
-              className="custom-spotlight-card w-80 h-96 flex flex-col justify-center rounded-2xl items-center gap-4 md:gap-6 lg:gap-6 xl:gap-6 bg-slate-400 dark:bg-slate-800 p-5"
+              spotlightColor="rgba(220, 9, 250, 0.2)"
+              className="custom-spotlight-card w-80 h-96 flex flex-col justify-center rounded-2xl items-center gap-4 md:gap-6 lg:gap-6 xl:gap-6 bg-slate-300! dark:bg-slate-800! p-5"
             >
               <motion.div
                 initial={{ opacity: 0 }}
